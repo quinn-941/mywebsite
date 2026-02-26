@@ -1,825 +1,461 @@
-<!DOCTYPE html>
-<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
-<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
-<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<!doctype html>
+<html lang="en">
 <head>
-
-   <!--- Basic Page Needs
-   ================================================== -->
-   <meta charset="utf-8">
-	<title>Ceevee - Free Responsive HTML5/CSS3 Template</title>
-	<meta name="description" content="">
-	<meta name="author" content="">
-
-   <!-- Mobile Specific Metas
-   ================================================== -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- CSS
-    ================================================== -->
-   <link rel="stylesheet" href="css/default.css">
-	<link rel="stylesheet" href="css/layout.css">
-   <link rel="stylesheet" href="css/media-queries.css">
-   <link rel="stylesheet" href="css/magnific-popup.css">
-
-   <!-- Script
-   ================================================== -->
-	<script src="js/modernizr.js"></script>
-
-   <!-- Favicons
-	================================================== -->
-	<link rel="shortcut icon" href="favicon.png" >
-
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Quinn Halvorson — Electrical & Biomedical Engineering | Robotics, PCB Design, Outreach" />
+  <title>Quinn Halvorson | Engineering Portfolio</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-   <!-- Header
-   ================================================== -->
-   <header id="home">
-
-      <nav id="nav-wrap">
-
-         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
-
-         <ul id="nav" class="nav">
-            <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
-            <li><a class="smoothscroll" href="#about">About</a></li>
-	         <li><a class="smoothscroll" href="#resume">Resume</a></li>
-            <li><a class="smoothscroll" href="#portfolio">Works</a></li>
-            <li><a class="smoothscroll" href="#testimonials">Testimonials</a></li>
-            <li><a class="smoothscroll" href="#contact">Contact</a></li>
-         </ul> <!-- end #nav -->
-
-      </nav> <!-- end #nav-wrap -->
-
-      <div class="row banner">
-         <div class="banner-text">
-            <h1 class="responsive-headline">I'm Jonathan Doe.</h1>
-            <h3>I'm a Manila based <span>graphic designer</span>, <span>illustrator</span> and <span>webdesigner</span> creating awesome and
-            effective visual identities for companies of all sizes around the globe. Let's <a class="smoothscroll" href="#about">start scrolling</a>
-            and learn more <a class="smoothscroll" href="#about">about me</a>.</h3>
-            <hr />
-            <ul class="social">
-               <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-               <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-               <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-               <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-               <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-               <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-               <li><a href="#"><i class="fa fa-skype"></i></a></li>
-            </ul>
-         </div>
+  <!-- Top Nav -->
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">QH</div>
+        <div class="brand-text">
+          <div class="brand-name">Quinn Halvorson</div>
+          <div class="brand-sub">Electrical & Biomedical Engineering • Fort Collins, CO</div>
+        </div>
       </div>
 
-      <p class="scrolldown">
-         <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
-      </p>
+      <nav class="nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
 
-   </header> <!-- Header End -->
+      <div class="actions">
+        <!-- Put your resume PDF in the same folder as index.html and name it resume.pdf -->
+        <a class="btn" href="resume.pdf" download>Download Resume (PDF)</a>
+        <a class="btn btn-ghost" href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
 
+  <!-- Hero -->
+  <main id="main">
+    <section class="hero section reveal">
+      <div class="container hero-grid">
+        <div class="hero-left">
+          <p class="kicker">Engineering Portfolio</p>
 
-   <!-- About Section
-   ================================================== -->
-   <section id="about">
+          <h1 class="headline">
+            I build <span class="accent">robust hardware</span> and <span class="accent2">robotics-ready</span> systems.
+          </h1>
 
-      <div class="row">
+          <p class="subhead">
+            Electrical & Biomedical Engineering student focused on PCB design, robotics electronics, fabrication,
+            and STEM outreach. Interested in internships in robotics, aerospace/defense-adjacent programs, and hands-on engineering teams.
+          </p>
 
-         <div class="three columns">
+          <div class="hero-badges" role="list">
+            <span class="chip">PCB Design (KiCad)</span>
+            <span class="chip">Robotics Electronics</span>
+            <span class="chip">SolidWorks (CSWA 2019, CSWP 2025)</span>
+            <span class="chip">CNC / Fabrication</span>
+          </div>
 
-            <img class="profile-pic"  src="images/profilepic.jpg" alt="" />
+          <div class="hero-cta">
+            <a class="btn" href="#projects">View Projects</a>
+            <a class="btn btn-ghost" href="mailto:quinn.halvorson11@gmail.com">Email</a>
+          </div>
 
-         </div>
+          <div class="quick-info">
+            <div class="qi"><span class="qi-label">Location</span><span class="qi-val">Fort Collins, CO</span></div>
+            <div class="qi"><span class="qi-label">Phone</span><span class="qi-val">(970) 690-6586</span></div>
+            <div class="qi"><span class="qi-label">Email</span><a class="qi-val" href="mailto:quinn.halvorson11@gmail.com">quinn.halvorson11@gmail.com</a></div>
+          </div>
+        </div>
 
-         <div class="nine columns main-col">
+        <aside class="hero-right">
+          <div class="panel highlight reveal">
+            <h2 class="panel-title">What I bring</h2>
+            <ul class="bullets">
+              <li><strong>Robotics electronics leadership</strong> — led electrical team, managed purchasing/budget, built reliable systems.</li>
+              <li><strong>Hands-on builds</strong> — design → manufacture → assemble electromechanical systems and demos.</li>
+              <li><strong>Communication + mentoring</strong> — tutoring STEM and creating K–12 outreach lessons/demos.</li>
+              <li><strong>Manufacturing mindset</strong> — fabrication + iterative prototyping with attention to reliability.</li>
+            </ul>
+          </div>
 
-            <h2>About Me</h2>
-
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-            eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-            voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-            voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-            sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
-            Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.
+          <div class="panel reveal">
+            <h2 class="panel-title">Looking for</h2>
+            <p class="muted">
+              Internship roles where I can contribute in electronics design, robotics controls hardware, test/validation,
+              manufacturing support, or STEM/field demo engineering.
             </p>
-
-            <div class="row">
-
-               <div class="columns contact-details">
-
-                  <h2>Contact Details</h2>
-                  <p class="address">
-						   <span>Jonathan Doe</span><br>
-						   <span>1600 Amphitheatre Parkway<br>
-						         Mountain View, CA 94043 US
-                     </span><br>
-						   <span>(123)456-7890</span><br>
-                     <span>anyone@website.com</span>
-					   </p>
-
-               </div>
-
-               <div class="columns download">
-                  <p>
-                     <a href="#" class="button"><i class="fa fa-download"></i>Download Resume</a>
-                  </p>
-               </div>
-
-            </div> <!-- end row -->
-
-         </div> <!-- end .main-col -->
-
+          </div>
+        </aside>
       </div>
-
-   </section> <!-- About Section End-->
-
-
-   <!-- Resume Section
-   ================================================== -->
-   <section id="resume">
-
-      <!-- Education
-      ----------------------------------------------- -->
-      <div class="row education">
-
-         <div class="three columns header-col">
-            <h1><span>Education</span></h1>
-         </div>
-
-         <div class="nine columns main-col">
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>University of Life</h3>
-                  <p class="info">Master in Graphic Design <span>&bull;</span> <em class="date">April 2007</em></p>
-
-                  <p>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-                  ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                  Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. Nullam dictum felis eu pede mollis pretium.
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>School of Cool Designers</h3>
-                  <p class="info">B.A. Degree in Graphic Design <span>&bull;</span> <em class="date">March 2003</em></p>
-
-                  <p>
-                  This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-                  Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-                  nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan
-                  ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-         </div> <!-- main-col end -->
-
-      </div> <!-- End Education -->
-
-
-      <!-- Work
-      ----------------------------------------------- -->
-      <div class="row work">
-
-         <div class="three columns header-col">
-            <h1><span>Work</span></h1>
-         </div>
-
-         <div class="nine columns main-col">
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>Awesome Design Studio</h3>
-                  <p class="info">Senior UX Designer <span>&bull;</span> <em class="date">March 2010 - Present</em></p>
-
-                  <p>
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
-                  Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-                  ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.
-                  Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. Nullam dictum felis eu pede mollis pretium.
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-            <div class="row item">
-
-               <div class="twelve columns">
-
-                  <h3>Super Cool Studio</h3>
-                  <p class="info">UX Designer <span>&bull;</span> <em class="date">March 2007 - February 2010</em></p>
-
-                  <p>
-                  This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-                  Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-                  nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan
-                  ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat
-                  </p>
-
-               </div>
-
-            </div> <!-- item end -->
-
-         </div> <!-- main-col end -->
-
-      </div> <!-- End Work -->
-
-
-      <!-- Skills
-      ----------------------------------------------- -->
-      <div class="row skill">
-
-         <div class="three columns header-col">
-            <h1><span>Skills</span></h1>
-         </div>
-
-         <div class="nine columns main-col">
-
-            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-            eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-            voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-            voluptatem sequi nesciunt.
-            </p>
-
-				<div class="bars">
-
-				   <ul class="skills">
-					   <li><span class="bar-expand photoshop"></span><em>Photoshop</em></li>
-                  <li><span class="bar-expand illustrator"></span><em>Illustrator</em></li>
-						<li><span class="bar-expand wordpress"></span><em>Wordpress</em></li>
-						<li><span class="bar-expand css"></span><em>CSS</em></li>
-						<li><span class="bar-expand html5"></span><em>HTML5</em></li>
-                  <li><span class="bar-expand jquery"></span><em>jQuery</em></li>
-					</ul>
-
-				</div><!-- end skill-bars -->
-
-			</div> <!-- main-col end -->
-
-      </div> <!-- End skills -->
-
-   </section> <!-- Resume Section End-->
-
-
-   <!-- Portfolio Section
-   ================================================== -->
-   <section id="portfolio">
-
-      <div class="row">
-
-         <div class="twelve columns collapsed">
-
-            <h1>Check Out Some of My Works.</h1>
-
-            <!-- portfolio-wrapper -->
-            <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
-
-          	   <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-01" title="">
-                        <img alt="" src="images/portfolio/coffee.jpg">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Coffee</h5>
-                              <p>Illustrration</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-02" title="">
-                        <img alt="" src="images/portfolio/console.jpg">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Console</h5>
-                              <p>Web Development</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-03" title="">
-                        <img alt="" src="images/portfolio/judah.jpg">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Judah</h5>
-                              <p>Webdesign</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-04" title="">
-                        <img alt="" src="images/portfolio/into-the-light.jpg">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Into The Light</h5>
-                              <p>Photography</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-05" title="">
-                        <img alt="" src="images/portfolio/farmerboy.jpg">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Farmer Boy</h5>
-                              <p>Branding</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-06" title="">
-                        <img alt="" src="images/portfolio/girl.jpg">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Girl</h5>
-                              <p>Photography</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-07" title="">
-                        <img alt="" src="images/portfolio/origami.jpg">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Origami</h5>
-                              <p>Illustrration</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div> <!-- item end -->
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-08" title="">
-                        <img alt="" src="images/portfolio/retrocam.jpg">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Retrocam</h5>
-                              <p>Web Development</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div>  <!-- item end -->
-
-            </div> <!-- portfolio-wrapper end -->
-
-         </div> <!-- twelve columns end -->
-
-
-         <!-- Modal Popup
-	      --------------------------------------------------------------- -->
-
-         <div id="modal-01" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="images/portfolio/modals/m-coffee.jpg" alt="" />
-
-		      <div class="description-box">
-			      <h4>Coffee Cup</h4>
-			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-               <span class="categories"><i class="fa fa-tag"></i>Branding, Webdesign</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="http://www.behance.net" target="_blank">Details</a>
-		         <a class="popup-modal-dismiss">Close</a>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section reveal">
+      <div class="container section-grid">
+        <div class="section-title">
+          <h2>About</h2>
+          <p>Fast overview</p>
+        </div>
+
+        <div class="panel">
+          <p>
+            I’m an Electrical & Biomedical Engineering student at Colorado State University with hands-on experience in
+            robotics electronics leadership, PCB tools, mechanical design, and fabrication. I like building systems that are
+            practical, serviceable, and reliable — and I enjoy mentoring and outreach that makes engineering approachable.
+          </p>
+
+          <div class="callouts">
+            <div class="callout">
+              <div class="callout-title">Robotics-first</div>
+              <div class="muted">Electronics lead experience + hot-swap control electronics design.</div>
             </div>
-
-	      </div><!-- modal-01 End -->
-
-         <div id="modal-02" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="images/portfolio/modals/m-console.jpg" alt="" />
-
-		      <div class="description-box">
-			      <h4>Console</h4>
-			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-               <span class="categories"><i class="fa fa-tag"></i>Branding, Web Development</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="http://www.behance.net" target="_blank">Details</a>
-		         <a class="popup-modal-dismiss">Close</a>
+            <div class="callout">
+              <div class="callout-title">Build-to-teach</div>
+              <div class="muted">Created and maintained K–12 STEM demos + lesson plans.</div>
             </div>
-
-	      </div><!-- modal-02 End -->
-
-         <div id="modal-03" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="images/portfolio/modals/m-judah.jpg" alt="" />
-
-		      <div class="description-box">
-			      <h4>Judah</h4>
-			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-               <span class="categories"><i class="fa fa-tag"></i>Branding</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="http://www.behance.net" target="_blank">Details</a>
-		         <a class="popup-modal-dismiss">Close</a>
+            <div class="callout">
+              <div class="callout-title">Shop-ready</div>
+              <div class="muted">Manual/CNC milling, lathes, cutting processes, and 3D printing.</div>
             </div>
-
-	      </div><!-- modal-03 End -->
-
-         <div id="modal-04" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="images/portfolio/modals/m-intothelight.jpg" alt="" />
-
-		      <div class="description-box">
-			      <h4>Into the Light</h4>
-			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-               <span class="categories"><i class="fa fa-tag"></i>Photography</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="http://www.behance.net" target="_blank">Details</a>
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-04 End -->
-
-         <div id="modal-05" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="images/portfolio/modals/m-farmerboy.jpg" alt="" />
-
-		      <div class="description-box">
-			      <h4>Farmer Boy</h4>
-			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-               <span class="categories"><i class="fa fa-tag"></i>Branding, Webdesign</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="http://www.behance.net" target="_blank">Details</a>
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-05 End -->
-
-         <div id="modal-06" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="images/portfolio/modals/m-girl.jpg" alt="" />
-
-		      <div class="description-box">
-			      <h4>Girl</h4>
-			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-               <span class="categories"><i class="fa fa-tag"></i>Photography</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="http://www.behance.net" target="_blank">Details</a>
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-06 End -->
-
-         <div id="modal-07" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="images/portfolio/modals/m-origami.jpg" alt="" />
-
-		      <div class="description-box">
-			      <h4>Origami</h4>
-			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-               <span class="categories"><i class="fa fa-tag"></i>Branding, Illustration</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="http://www.behance.net" target="_blank">Details</a>
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-07 End -->
-
-         <div id="modal-08" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="images/portfolio/modals/m-retrocam.jpg" alt="" />
-
-		      <div class="description-box">
-			      <h4>Retrocam</h4>
-			      <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit.</p>
-               <span class="categories"><i class="fa fa-tag"></i>Webdesign, Photography</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="http://www.behance.net" target="_blank">Details</a>
-		         <a class="popup-modal-dismiss">Close</a>
-            </div>
-
-	      </div><!-- modal-01 End -->
-
-
-      </div> <!-- row End -->
-
-   </section> <!-- Portfolio Section End-->
-
-
-   <!-- Call-To-Action Section
-   ================================================== -->
-   <section id="call-to-action">
-
-      <div class="row">
-
-         <div class="two columns header-col">
-
-            <h1><span>Get Hosting.</span></h1>
-
-         </div>
-
-         <div class="seven columns">
-
-            <h2><span class="lead">Unde Omnis Iste</span></h2>
-            <p><span class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-            eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae. </span></p>
-
-         </div>
-
-         <div class="three columns action">
-
-
-
-         </div>
-
+          </div>
+        </div>
       </div>
+    </section>
 
-   </section> <!-- Call-To-Action Section End-->
+    <!-- Projects -->
+    <section id="projects" class="section reveal">
+      <div class="container section-grid">
+        <div class="section-title">
+          <h2>Projects</h2>
+          <p>Gallery</p>
+        </div>
 
+        <div class="panel">
+          <p class="muted" style="margin-top:0;">
+            Add your top 3–6 projects here. Keep each description outcome-focused: what you built, constraints, and what improved.
+            (I included strong starters aligned to your resume — just customize names/links.)
+          </p>
 
-   <!-- Testimonials Section
-   ================================================== -->
-   <section id="testimonials">
+          <div class="projects-grid">
+            <article class="project-card">
+              <div class="project-top">
+                <h3>Hot-Swap Control Electronics (Robotics)</h3>
+                <span class="badge">Hardware</span>
+              </div>
+              <p class="muted">
+                Designed a hot-swap system to improve serviceability and reduce downtime during robot troubleshooting.
+              </p>
+              <ul class="bullets compact">
+                <li>Defined requirements: fast swap, robust connectors, safe power handling.</li>
+                <li>Integrated into robot electrical architecture for rapid field maintenance.</li>
+              </ul>
+              <div class="tags">
+                <span>Robotics</span><span>Power</span><span>Reliability</span><span>Serviceability</span>
+              </div>
+              <div class="links">
+                <a href="#" target="_blank" rel="noreferrer">Case Study</a>
+                <span aria-hidden="true">·</span>
+                <a href="#" target="_blank" rel="noreferrer">Photos</a>
+              </div>
+            </article>
 
-      <div class="text-container">
+            <article class="project-card">
+              <div class="project-top">
+                <h3>K–12 Engineering Demos (Outreach)</h3>
+                <span class="badge">Education</span>
+              </div>
+              <p class="muted">
+                Built and maintained demos used to teach engineering concepts to K–12 students; authored lesson plans for grades 6–12.
+              </p>
+              <ul class="bullets compact">
+                <li>Designed demos to be durable, repeatable, and classroom-safe.</li>
+                <li>Iterated based on feedback to improve clarity and engagement.</li>
+              </ul>
+              <div class="tags">
+                <span>Teaching</span><span>Demo Design</span><span>Documentation</span>
+              </div>
+              <div class="links">
+                <a href="#" target="_blank" rel="noreferrer">Lesson Plan</a>
+                <span aria-hidden="true">·</span>
+                <a href="#" target="_blank" rel="noreferrer">Demo Video</a>
+              </div>
+            </article>
 
-         <div class="row">
+            <article class="project-card">
+              <div class="project-top">
+                <h3>Robot Electrical System Upgrades</h3>
+                <span class="badge">Robotics</span>
+              </div>
+              <p class="muted">
+                Maintained and upgraded competition robots; led electrical team, purchasing, and build quality.
+              </p>
+              <ul class="bullets compact">
+                <li>Supervised and trained team members in wiring best practices.</li>
+                <li>Managed buy lists and budget to keep builds on schedule.</li>
+              </ul>
+              <div class="tags">
+                <span>Wiring</span><span>Leadership</span><span>Build Quality</span><span>Budgeting</span>
+              </div>
+              <div class="links">
+                <a href="#" target="_blank" rel="noreferrer">Write-Up</a>
+                <span aria-hidden="true">·</span>
+                <a href="#" target="_blank" rel="noreferrer">CAD</a>
+              </div>
+            </article>
 
-            <div class="two columns header-col">
+            <article class="project-card">
+              <div class="project-top">
+                <h3>Maker Space 3D Printing Curriculum</h3>
+                <span class="badge">Workshop</span>
+              </div>
+              <p class="muted">
+                Created lesson plans to teach 3D printing; supported grants and managed a maker space + VR lab.
+              </p>
+              <ul class="bullets compact">
+                <li>Developed beginner-friendly training materials and workflows.</li>
+                <li>Supported funding efforts through project prep and documentation.</li>
+              </ul>
+              <div class="tags">
+                <span>3D Printing</span><span>Process</span><span>Teaching</span><span>Ops</span>
+              </div>
+              <div class="links">
+                <a href="#" target="_blank" rel="noreferrer">Materials</a>
+                <span aria-hidden="true">·</span>
+                <a href="#" target="_blank" rel="noreferrer">Gallery</a>
+              </div>
+            </article>
+          </div>
 
-               <h1><span>Client Testimonials</span></h1>
-
-            </div>
-
-            <div class="ten columns flex-container">
-
-               <div class="flexslider">
-
-                  <ul class="slides">
-
-                     <li>
-                        <blockquote>
-                           <p>Your work is going to fill a large part of your life, and the only way to be truly satisfied is
-                           to do what you believe is great work. And the only way to do great work is to love what you do.
-                           If you haven't found it yet, keep looking. Don't settle. As with all matters of the heart, you'll know when you find it.
-                           </p>
-                           <cite>Steve Jobs</cite>
-                        </blockquote>
-                     </li> <!-- slide ends -->
-
-                     <li>
-                        <blockquote>
-                           <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-                           Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-                           nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
-                           </p>
-                           <cite>Mr. Adobe</cite>
-                        </blockquote>
-                     </li> <!-- slide ends -->
-
-                  </ul>
-
-               </div> <!-- div.flexslider ends -->
-
-            </div> <!-- div.flex-container ends -->
-
-         </div> <!-- row ends -->
-
-       </div>  <!-- text-container ends -->
-
-   </section> <!-- Testimonials Section End-->
-
-
-   <!-- Contact Section
-   ================================================== -->
-   <section id="contact">
-
-         <div class="row section-head">
-
-            <div class="two columns header-col">
-
-               <h1><span>Get In Touch.</span></h1>
-
-            </div>
-
-            <div class="ten columns">
-
-                  <p class="lead">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                  eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-                  voluptatem quia voluptas sit aspernatur aut odit aut fugit.
-                  </p>
-
-            </div>
-
-         </div>
-
-         <div class="row">
-
-            <div class="eight columns">
-
-               <!-- form -->
-               <form action="" method="post" id="contactForm" name="contactForm">
-					<fieldset>
-
-                  <div>
-						   <label for="contactName">Name <span class="required">*</span></label>
-						   <input type="text" value="" size="35" id="contactName" name="contactName">
-                  </div>
-
-                  <div>
-						   <label for="contactEmail">Email <span class="required">*</span></label>
-						   <input type="text" value="" size="35" id="contactEmail" name="contactEmail">
-                  </div>
-
-                  <div>
-						   <label for="contactSubject">Subject</label>
-						   <input type="text" value="" size="35" id="contactSubject" name="contactSubject">
-                  </div>
-
-                  <div>
-                     <label for="contactMessage">Message <span class="required">*</span></label>
-                     <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
-                  </div>
-
-                  <div>
-                     <button class="submit">Submit</button>
-                     <span id="image-loader">
-                        <img alt="" src="images/loader.gif">
-                     </span>
-                  </div>
-
-					</fieldset>
-				   </form> <!-- Form End -->
-
-               <!-- contact-warning -->
-               <div id="message-warning"> Error boy</div>
-               <!-- contact-success -->
-				   <div id="message-success">
-                  <i class="fa fa-check"></i>Your message was sent, thank you!<br>
-				   </div>
-
-            </div>
-
-
-            <aside class="four columns footer-widgets">
-
-               <div class="widget widget_contact">
-
-					   <h4>Address and Phone</h4>
-					   <p class="address">
-						   Jonathan Doe<br>
-						   1600 Amphitheatre Parkway <br>
-						   Mountain View, CA 94043 US<br>
-						   <span>(123) 456-7890</span>
-					   </p>
-
-				   </div>
-
-               <div class="widget widget_tweets">
-
-                  <h4 class="widget-title">Latest Tweets</h4>
-
-                  <ul id="twitter">
-                     <li>
-                        <span>
-                        This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet.
-                        Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum
-                        <a href="#">http://t.co/CGIrdxIlI3</a>
-                        </span>
-                        <b><a href="#">2 Days Ago</a></b>
-                     </li>
-                     <li>
-                        <span>
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam,
-                        eaque ipsa quae ab illo inventore veritatis et quasi
-                        <a href="#">http://t.co/CGIrdxIlI3</a>
-                        </span>
-                        <b><a href="#">3 Days Ago</a></b>
-                     </li>
-                  </ul>
-
-		         </div>
-
-            </aside>
-
+          <div class="note">
+            <strong>Tip:</strong> Replace the “#” links with your GitHub repo(s), a Google Drive photo folder, or a short write-up page.
+            If you want, paste 3–6 real projects and I’ll rewrite them into recruiter-optimized bullets.
+          </div>
+        </div>
       </div>
+    </section>
 
-   </section> <!-- Contact Section End-->
+    <!-- Experience -->
+    <section id="experience" class="section reveal">
+      <div class="container section-grid">
+        <div class="section-title">
+          <h2>Experience</h2>
+          <p>Impact & leadership</p>
+        </div>
 
-
-   <!-- footer
-   ================================================== -->
-   <footer>
-
-      <div class="row">
-
-         <div class="twelve columns">
-
-            <ul class="social-links">
-               <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-               <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-               <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-               <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-               <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-               <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-               <li><a href="#"><i class="fa fa-skype"></i></a></li>
+        <div class="stack">
+          <article class="panel item">
+            <header class="item-header">
+              <div>
+                <h3>CSU Engineering Success Center — Peer Mentor</h3>
+                <p class="muted">Fort Collins, CO</p>
+              </div>
+              <p class="pill">Sep 2024 — Sep 2025</p>
+            </header>
+            <ul class="bullets">
+              <li>Tutored students in STEM courses with an emphasis on clarity, fundamentals, and problem-solving habits.</li>
+              <li>Planned and organized CSU community programs with consistent execution and coordination.</li>
             </ul>
+            <div class="tags">
+              <span>Mentoring</span><span>Communication</span><span>Planning</span>
+            </div>
+          </article>
 
-            <ul class="copyright">
-               <li>&copy; Copyright 2014 CeeVee</li>
-               <li>Design by <a href="http://www.styleshout.com/" title="Styleshout" target="_blank">Styleshout</a></li>   
+          <article class="panel item">
+            <header class="item-header">
+              <div>
+                <h3>CSU Electrical Engineering Outreach — Member</h3>
+                <p class="muted">Fort Collins, CO</p>
+              </div>
+              <p class="pill">Sep 2024 — Present</p>
+            </header>
+            <ul class="bullets">
+              <li>Created engineering lesson plans for grades 6–12; tailored complexity to audience and learning goals.</li>
+              <li>Built and maintained demos for K–12 education, optimizing for durability and repeatability.</li>
             </ul>
+            <div class="tags">
+              <span>Outreach</span><span>Demo Engineering</span><span>Documentation</span>
+            </div>
+          </article>
 
-         </div>
+          <article class="panel item">
+            <header class="item-header">
+              <div>
+                <h3>FIRST Robotics Team 4388 (Ridgebotics) — Electronics Lead</h3>
+                <p class="muted">Fort Collins, CO</p>
+              </div>
+              <p class="pill">Aug 2019 — May 2022</p>
+            </header>
+            <ul class="bullets">
+              <li>Promoted to Electronics Lead (2020); supervised and trained electrical team members.</li>
+              <li>Managed buy lists and maintained the project budget; improved parts readiness during builds.</li>
+              <li>Designed, manufactured, and assembled electromechanical systems; ensured wiring quality and reliability.</li>
+              <li>Created a hot-swap system for control electronics to reduce downtime during troubleshooting.</li>
+              <li>Maintained and upgraded competition robots; supported general manufacturing and assembly needs.</li>
+            </ul>
+            <div class="tags">
+              <span>Robotics</span><span>Electrical Systems</span><span>Leadership</span><span>Reliability</span>
+            </div>
+          </article>
 
-         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
-
+          <article class="panel item">
+            <header class="item-header">
+              <div>
+                <h3>Fort Collins High School Maker Space — Lead Intern</h3>
+                <p class="muted">Fort Collins, CO</p>
+              </div>
+              <p class="pill">Aug 2018 — May 2020</p>
+            </header>
+            <ul class="bullets">
+              <li>Managed maker space and VR lab; led interns solving engineering and operations problems.</li>
+              <li>Created lesson plans to teach 3D printing; improved onboarding for new students.</li>
+              <li>Helped prepare grants to fund the maker space and projects.</li>
+            </ul>
+            <div class="tags">
+              <span>Operations</span><span>3D Printing</span><span>Leadership</span><span>Grants</span>
+            </div>
+          </article>
+        </div>
       </div>
+    </section>
 
-   </footer> <!-- Footer End-->
+    <!-- Skills -->
+    <section id="skills" class="section reveal">
+      <div class="container section-grid">
+        <div class="section-title">
+          <h2>Skills</h2>
+          <p>Tooling</p>
+        </div>
 
-   <!-- Java Script
-   ================================================== -->
-   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
-   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+        <div class="panel">
+          <div class="skills-grid">
+            <div class="skill">
+              <h3>PCB Design</h3>
+              <p class="muted">KiCad</p>
+            </div>
 
-   <script src="js/jquery.flexslider.js"></script>
-   <script src="js/waypoints.js"></script>
-   <script src="js/jquery.fittext.js"></script>
-   <script src="js/magnific-popup.js"></script>
-   <script src="js/init.js"></script>
+            <div class="skill">
+              <h3>Circuit Simulation</h3>
+              <p class="muted">Cadence, LTspice</p>
+            </div>
 
+            <div class="skill">
+              <h3>Mechanical Design</h3>
+              <p class="muted">SolidWorks (CSWA 2019, CSWP 2025)</p>
+            </div>
+
+            <div class="skill">
+              <h3>Fabrication</h3>
+              <p class="muted">Manual milling machines, lathes, CNC milling; plasma/oxy cutting; limited MIG/stick welding</p>
+            </div>
+
+            <div class="skill">
+              <h3>3D Printing</h3>
+              <p class="muted">SLA and FDM; Cura and Slic3r derivatives</p>
+            </div>
+
+            <div class="skill">
+              <h3>Software</h3>
+              <p class="muted">Word, Excel, PowerPoint, Teams; Photoshop, Lightroom, Premiere Pro</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section reveal">
+      <div class="container section-grid">
+        <div class="section-title">
+          <h2>Education</h2>
+          <p>CSU</p>
+        </div>
+
+        <div class="panel item">
+          <header class="item-header">
+            <div>
+              <h3>Colorado State University</h3>
+              <p class="muted">Electrical & Biomedical Engineering • Junior</p>
+            </div>
+            <p class="pill">2022 — Expected 2027</p>
+          </header>
+          <p class="muted">
+            If you want, add: relevant coursework (Circuits, Electronics, Embedded, Controls), clubs, labs, or GPA (optional).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section reveal">
+      <div class="container section-grid">
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>Let’s connect</p>
+        </div>
+
+        <div class="panel">
+          <div class="contact-grid">
+            <div>
+              <h3 style="margin-top:0;">Email</h3>
+              <p class="muted">Best way to reach me:</p>
+              <p class="contact-line">
+                <a href="mailto:quinn.halvorson11@gmail.com">quinn.halvorson11@gmail.com</a>
+              </p>
+
+              <div class="contact-actions">
+                <a class="btn" href="mailto:quinn.halvorson11@gmail.com">Email Me</a>
+                <a class="btn btn-ghost" href="resume.pdf" download>Download PDF</a>
+              </div>
+            </div>
+
+            <div class="panel inset">
+              <h3 style="margin-top:0;">Recruiter-ready</h3>
+              <ul class="bullets compact">
+                <li>Clear sectioning + skimmable bullet format</li>
+                <li>Keywords for robotics, manufacturing, and validation</li>
+                <li>Project gallery tailored for internships</li>
+              </ul>
+              <p class="muted small">
+                Hosting on GitHub Pages: push these files, enable Pages in repo settings.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="muted small">© <span id="year"></span> Quinn Halvorson • Built with HTML5 + CSS3</p>
+      <p class="muted small">Fort Collins, CO • (970) 690-6586</p>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Scroll reveal (small + tasteful)
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!reduceMotion && "IntersectionObserver" in window) {
+      const obs = new IntersectionObserver((entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) e.target.classList.add("in");
+        }
+      }, { threshold: 0.08 });
+
+      document.querySelectorAll(".reveal").forEach(el => obs.observe(el));
+    } else {
+      document.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
+    }
+  </script>
 </body>
-
 </html>
