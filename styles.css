@@ -1,261 +1,508 @@
 /* ============================================================
-   BRUTALIST THEME
-   - High contrast
-   - Hard borders
-   - Monospace typography
-   - Minimal decoration
-   - "Raw" layout (but still responsive)
+   NEO-BRUTALIST THEME (Complete CSS)
+   Includes:
+   - Thick borders + offset shadows
+   - Bold accent palette
+   - CSS-only background pattern (dots + grid)
+   - Micro-animations (button pop, card wiggle)
+   - Responsive layout
+   - Respects prefers-reduced-motion
 ============================================================ */
 
-/* -------- Root variables (easy theme tweaks) -------- */
+/* -------- Theme variables: change these to restyle fast -------- */
 :root{
-  /* Brutalist background and text */
-  --bg: #000;
-  --fg: #fff;
+  /* Page colors */
+  --bg: #faf6ff;        /* warm off-white */
+  --ink: #111111;       /* near-black text */
+  --paper: #ffffff;     /* card fill */
 
-  /* Accent color for links/buttons (pick one strong color) */
-  --accent: #00ff66;
+  /* Accent palette */
+  --accent: #7c5cff;    /* purple */
+  --accent2: #00d084;   /* green */
+  --accent3: #ff3d81;   /* pink */
 
-  /* Borders are thick and obvious */
-  --border: 3px solid var(--fg);
+  /* Brutalist outlines + shadows */
+  --border: 3px solid var(--ink);
+  --shadow: 7px 7px 0 var(--ink);
 
-  /* Layout constraints */
-  --max: 1100px;
+  /* Layout */
+  --max: 1120px;
+  --radius: 16px;
 
-  /* Type: mono is classic brutalist */
+  /* Typography */
+  --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
   --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  /* Motion curves */
+  --ease-pop: cubic-bezier(.2,.9,.2,1);
+  --ease-wiggle: cubic-bezier(.25,.9,.25,1);
 }
 
-/* -------- Global reset / base -------- */
-*{
-  box-sizing: border-box; /* prevents padding from breaking widths */
-}
+/* -------- Base reset -------- */
+*{ box-sizing: border-box; }
 
-html{
-  /* Brutalist sites often do NOT use smooth scrolling,
-     but it’s optional. If you want raw behavior, delete this. */
-  scroll-behavior: auto;
-}
-
+/* -------- Page background: neo-brutal pattern (CSS-only) -------- */
 body{
   margin: 0;
-  background: var(--bg);
-  color: var(--fg);
-  font-family: var(--mono);
+  color: var(--ink);
+  font-family: var(--sans);
   line-height: 1.55;
+
+  /* Base color */
+  background-color: var(--bg);
+
+  /* Pattern layers (dots + grid) */
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(17,17,17,.18) 1px, transparent 1.8px),
+    linear-gradient(rgba(17,17,17,.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(17,17,17,.08) 1px, transparent 1px),
+    linear-gradient(rgba(17,17,17,.045) 2px, transparent 2px),
+    linear-gradient(90deg, rgba(17,17,17,.045) 2px, transparent 2px);
+
+  background-size:
+    14px 14px,   /* dots */
+    28px 28px,   /* thin horizontal grid */
+    28px 28px,   /* thin vertical grid */
+    140px 140px, /* thick horizontal grid */
+    140px 140px; /* thick vertical grid */
+
+  background-position:
+    0 0,
+    0 0,
+    0 0,
+    8px 10px,
+    8px 10px;
 }
 
-/* -------- Links -------- */
-a{
-  color: var(--accent);
-  text-decoration: underline;
-  text-decoration-thickness: 2px;  /* heavier underline */
-  text-underline-offset: 3px;
-}
-a:hover{
-  /* Brutalist hover: invert feel */
-  background: var(--accent);
-  color: #000;
+/* -------- Container -------- */
+.wrap{
+  width: min(var(--max), calc(100% - 40px));
+  margin: 0 auto;
 }
 
-/* -------- Skip link (accessibility) -------- */
+/* -------- Skip link -------- */
 .skip{
   position: absolute;
   left: -999px;
   top: 10px;
   padding: 10px 12px;
+  background: var(--paper);
   border: var(--border);
-  background: #000;
-  color: var(--fg);
+  box-shadow: var(--shadow);
+  border-radius: 10px;
 }
 .skip:focus{
-  left: 10px; /* only appears when focused */
-}
-
-/* -------- Layout wrapper -------- */
-.wrap{
-  width: min(var(--max), calc(100% - 24px));
-  margin: 0 auto;
+  left: 10px;
 }
 
 /* ============================================================
    TOP BAR
 ============================================================ */
-.top{
+.topbar{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--bg);
   border-bottom: var(--border);
-  padding: 16px 0 12px;
 }
 
-/* ID area */
-.name{
-  margin: 0;
-  font-size: clamp(28px, 4vw, 48px);
-  letter-spacing: 0.04em;
-}
-.role{
-  margin: 6px 0 0;
-  opacity: 0.85;
-}
-
-/* Actions row */
-.actions{
+.topbar-inner{
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 14px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 0;
 }
 
-/* Brutalist "button" (actually a styled link) */
-.btn{
-  display: inline-block;
-  padding: 10px 12px;
+/* Brand area */
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.stamp{
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  background: var(--accent2);
   border: var(--border);
-  background: #000;
-  color: var(--fg);
-  text-decoration: none;          /* buttons are not underlined */
-  text-transform: uppercase;      /* brutalist vibe */
-  letter-spacing: 0.06em;
+  box-shadow: var(--shadow);
+  border-radius: 12px;
+  font-weight: 900;
+  font-family: var(--mono);
+
+  /* micro-anim */
+  transition: transform 180ms var(--ease-pop);
+  will-change: transform;
 }
-.btn:hover{
-  background: var(--fg);
-  color: #000;
+.stamp:hover{
+  transform: rotate(-2deg) translate(-1px,-1px);
 }
 
-/* Nav */
+/* Name/subtitle */
+.brand-name{
+  font-weight: 900;
+  letter-spacing: -0.2px;
+  font-size: 16px;
+}
+.brand-sub{
+  font-size: 12.5px;
+  opacity: 0.75;
+}
+
+/* Nav links */
 .nav{
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 14px;
+  gap: 10px 12px;
+  justify-content: center;
 }
 .nav a{
-  color: var(--fg);
+  color: var(--ink);
   text-decoration: none;
-  border-bottom: 2px solid var(--fg);
-  padding-bottom: 2px;
+  padding: 6px 10px;
+  border: 2px solid transparent;
+  border-radius: 10px;
 }
 .nav a:hover{
-  background: var(--fg);
-  color: #000;
+  border-color: var(--ink);
+  background: var(--paper);
+}
+
+/* Actions */
+.actions{
+  display: flex;
+  gap: 10px;
 }
 
 /* ============================================================
-   SECTIONS
+   BUTTONS (with micro-animations)
 ============================================================ */
-.block{
-  padding: 28px 0;
-  border-bottom: var(--border); /* brutalist: sections are separated with hard rules */
-}
-
-h2{
-  margin: 0 0 12px 0;
-  font-size: 18px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-/* Panels: hard bordered content blocks */
-.panel{
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 12px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
   border: var(--border);
-  padding: 14px;
-  background: #000;
+  box-shadow: var(--shadow);
+  border-radius: 12px;
+  font-weight: 800;
+
+  transition:
+    transform 160ms var(--ease-pop),
+    box-shadow 160ms var(--ease-pop),
+    filter 160ms var(--ease-pop);
+  will-change: transform;
 }
 
-/* Two-column hero grid */
-.grid2{
+.btn:hover{
+  transform: translate(-3px, -3px);
+  filter: brightness(1.03);
+}
+
+.btn:active{
+  transform: translate(0,0);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+/* Alternate button style */
+.btn-alt{
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* ============================================================
+   SECTIONS / HEADINGS
+============================================================ */
+.section{
+  padding: 54px 0;
+}
+
+.section-grid{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 240px 1fr;
+  gap: 18px;
+}
+
+.section-title h2{
+  margin: 0;
+  font-size: 18px;
+  font-weight: 900;
+}
+.section-title p{
+  margin: 6px 0 0;
+  opacity: 0.75;
+}
+
+/* ============================================================
+   HERO
+============================================================ */
+.hero-grid{
+  display: grid;
+  grid-template-columns: 1.25fr .85fr;
+  gap: 18px;
+  align-items: start;
+}
+
+/* Small pill label */
+.pill{
+  display: inline-block;
+  padding: 6px 10px;
+  background: var(--paper);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 12px;
+  margin: 0 0 14px;
+}
+
+/* Big headline */
+.headline{
+  margin: 0;
+  font-size: clamp(34px, 4.5vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.8px;
+  font-weight: 950;
+}
+
+/* Highlighted words */
+.hl{
+  background: #fff3a6;
+  border: 2px solid var(--ink);
+  padding: 0 6px;
+  border-radius: 10px;
+}
+.hl2{
+  background: #b7fff0;
+  border: 2px solid var(--ink);
+  padding: 0 6px;
+  border-radius: 10px;
+}
+
+/* Subhead */
+.subhead{
+  margin: 14px 0 18px;
+  opacity: 0.85;
+  max-width: 70ch;
+}
+
+/* Contact strip chips */
+.contact-strip{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 12px 0 18px;
+}
+.chip{
+  background: var(--paper);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 13px;
+}
+
+/* CTA row */
+.cta{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+/* ============================================================
+   CARDS (with micro-animations)
+============================================================ */
+.card{
+  background: var(--paper);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  padding: 16px;
+
+  transition:
+    transform 220ms var(--ease-wiggle),
+    box-shadow 220ms var(--ease-wiggle);
+  will-change: transform;
+}
+
+/* Hero side cards container */
+.cards{
+  display: grid;
   gap: 14px;
 }
 
-/* Generic grid for projects/skills */
+/* Give hero cards different background colors */
+.card-a{ background: #ffffff; }
+.card-b{ background: #f0f8ff; }
+
+/* Lists */
+ul{
+  margin: 10px 0 0;
+  padding-left: 18px;
+}
+li{ margin: 6px 0; }
+
+/* Muted text */
+.muted{ opacity: 0.75; }
+
+/* Wiggle animation */
+@keyframes neoWiggle{
+  0%   { transform: translate(0,0) rotate(0deg); }
+  35%  { transform: translate(-2px,-2px) rotate(-0.4deg); }
+  70%  { transform: translate(-1px,-3px) rotate(0.35deg); }
+  100% { transform: translate(-2px,-2px) rotate(0deg); }
+}
+
+/* Apply wiggle on hover (subtle) */
+.card:hover{
+  animation: neoWiggle 260ms var(--ease-wiggle) 1;
+  box-shadow: 9px 9px 0 var(--ink);
+}
+
+/* ============================================================
+   PROJECT GRID + CARD TOP
+============================================================ */
 .grid{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 14px;
 }
 
-/* Facts in hero */
-.facts{
-  margin-top: 14px;
-  display: grid;
+/* Top row inside cards */
+.card-top{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
   gap: 10px;
 }
-.fact{
-  border: 2px dashed var(--fg); /* brutalist: dashed/dotted rules can be nice */
-  padding: 10px;
-}
-.k{
-  display: block;
-  opacity: 0.8;
-  letter-spacing: 0.08em;
+
+/* Small badge */
+.badge{
+  background: var(--accent3);
+  color: white;
+  border: var(--border);
+  box-shadow: 4px 4px 0 var(--ink);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-family: var(--mono);
   font-size: 12px;
-}
-.v{
-  display: block;
-  margin-top: 2px;
+  white-space: nowrap;
 }
 
-/* Experience header row */
-.row{
+/* Links row */
+.links{
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.links a{
+  color: var(--ink);
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+.links a:hover{
+  background: #fff3a6;
+}
+
+/* ============================================================
+   EXPERIENCE
+============================================================ */
+.stack{
+  display: grid;
+  gap: 14px;
+}
+.job-top{
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
 }
 .date{
-  border: 2px solid var(--fg);
-  padding: 6px 8px;
+  background: #fff3a6;
+  border: var(--border);
+  box-shadow: 4px 4px 0 var(--ink);
+  border-radius: 12px;
+  padding: 8px 10px;
+  font-family: var(--mono);
+  font-size: 12px;
   white-space: nowrap;
 }
 
-/* Lists: keep them tight */
-ul{
-  margin: 10px 0 0;
-  padding-left: 18px;
+/* ============================================================
+   TAGS (hero toolbox)
+============================================================ */
+.tagrow{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
 }
-li{
-  margin: 6px 0;
-}
-
-/* Muted text */
-.muted{
-  opacity: 0.75;
-}
-
-/* Links area inside project cards */
-.links{
-  margin-top: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
+.tag{
+  background: #b7fff0;
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-family: var(--mono);
+  font-size: 12px;
 }
 
 /* ============================================================
    FOOTER
 ============================================================ */
-.foot{
-  padding: 18px 0 28px;
+.footer{
+  border-top: var(--border);
+  padding: 22px 0 30px;
 }
-.footrow{
-  border: var(--border);
-  padding: 12px;
+.footer-inner{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
 }
 
 /* ============================================================
    RESPONSIVE
-   Brutalist doesn't mean broken. We stack on small screens.
 ============================================================ */
-@media (max-width: 900px){
-  .grid2{
+@media (max-width: 980px){
+  .topbar-inner{
+    flex-wrap: wrap;
+  }
+  .actions{
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .hero-grid{
+    grid-template-columns: 1fr;
+  }
+  .section-grid{
     grid-template-columns: 1fr;
   }
   .grid{
     grid-template-columns: 1fr;
   }
-  .row{
+  .job-top{
     flex-direction: column;
   }
   .date{
     align-self: flex-start;
+  }
+}
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+@media (prefers-reduced-motion: reduce){
+  .btn, .card, .stamp{
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
   }
 }
