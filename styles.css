@@ -1,467 +1,261 @@
+/* ============================================================
+   BRUTALIST THEME
+   - High contrast
+   - Hard borders
+   - Monospace typography
+   - Minimal decoration
+   - "Raw" layout (but still responsive)
+============================================================ */
+
+/* -------- Root variables (easy theme tweaks) -------- */
 :root{
-  --bg0:#070a12;
-  --bg1:#0b1020;
-  --panel: rgba(255,255,255,.06);
-  --panel2: rgba(255,255,255,.09);
-  --border: rgba(255,255,255,.12);
-  --text: rgba(255,255,255,.92);
-  --muted: rgba(255,255,255,.72);
-  --shadow: 0 18px 60px rgba(0,0,0,.45);
-  --radius: 18px;
+  /* Brutalist background and text */
+  --bg: #000;
+  --fg: #fff;
 
-  --accent: #7c5cff;
-  --accent2:#34d399;
-  --accent3:#22d3ee;
+  /* Accent color for links/buttons (pick one strong color) */
+  --accent: #00ff66;
 
-  --max: 1120px;
-  --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  /* Borders are thick and obvious */
+  --border: 3px solid var(--fg);
+
+  /* Layout constraints */
+  --max: 1100px;
+
+  /* Type: mono is classic brutalist */
   --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-*{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
+/* -------- Global reset / base -------- */
+*{
+  box-sizing: border-box; /* prevents padding from breaking widths */
+}
+
+html{
+  /* Brutalist sites often do NOT use smooth scrolling,
+     but it’s optional. If you want raw behavior, delete this. */
+  scroll-behavior: auto;
+}
+
 body{
-  margin:0;
-  font-family: var(--sans);
-  color: var(--text);
-  background:
-    radial-gradient(800px 450px at 10% 5%, rgba(124,92,255,.22), transparent 60%),
-    radial-gradient(900px 520px at 90% 18%, rgba(52,211,153,.18), transparent 62%),
-    radial-gradient(700px 420px at 50% 100%, rgba(34,211,238,.12), transparent 55%),
-    linear-gradient(180deg, var(--bg0), var(--bg1));
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--mono);
   line-height: 1.55;
 }
 
-a{ color: inherit; text-underline-offset: 3px; }
-a:hover{ opacity:.92; }
-.container{
-  width: min(var(--max), calc(100% - 40px));
+/* -------- Links -------- */
+a{
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;  /* heavier underline */
+  text-underline-offset: 3px;
+}
+a:hover{
+  /* Brutalist hover: invert feel */
+  background: var(--accent);
+  color: #000;
+}
+
+/* -------- Skip link (accessibility) -------- */
+.skip{
+  position: absolute;
+  left: -999px;
+  top: 10px;
+  padding: 10px 12px;
+  border: var(--border);
+  background: #000;
+  color: var(--fg);
+}
+.skip:focus{
+  left: 10px; /* only appears when focused */
+}
+
+/* -------- Layout wrapper -------- */
+.wrap{
+  width: min(var(--max), calc(100% - 24px));
   margin: 0 auto;
 }
 
-/* Accessibility */
-.skip-link{
-  position:absolute;
-  left:-999px;
-  top:auto;
-  width:1px;
-  height:1px;
-  overflow:hidden;
-}
-.skip-link:focus{
-  left:16px; top:16px;
-  width:auto; height:auto;
-  padding:10px 12px;
-  background:#0f1730;
-  border:1px solid var(--border);
-  border-radius: 12px;
-  z-index:9999;
+/* ============================================================
+   TOP BAR
+============================================================ */
+.top{
+  border-bottom: var(--border);
+  padding: 16px 0 12px;
 }
 
-/* Topbar */
-.topbar{
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  backdrop-filter: blur(12px);
-  background: rgba(7,10,18,.62);
-  border-bottom: 1px solid rgba(255,255,255,.10);
+/* ID area */
+.name{
+  margin: 0;
+  font-size: clamp(28px, 4vw, 48px);
+  letter-spacing: 0.04em;
 }
-.topbar-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: 14px;
-  padding: 14px 0;
+.role{
+  margin: 6px 0 0;
+  opacity: 0.85;
 }
 
-.brand{
-  display:flex;
-  align-items:center;
-  gap: 12px;
-  min-width: 260px;
+/* Actions row */
+.actions{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
 }
-.logo{
-  width:44px; height:44px;
-  display:grid; place-items:center;
-  border-radius: 14px;
-  background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(52,211,153,.8));
-  box-shadow: var(--shadow);
-  font-weight: 900;
-  letter-spacing:.5px;
-}
-.brand-text{ display:flex; flex-direction:column; gap:2px; }
-.brand-name{ font-weight: 750; }
-.brand-sub{ color: var(--muted); font-size: 12.5px; }
 
+/* Brutalist "button" (actually a styled link) */
+.btn{
+  display: inline-block;
+  padding: 10px 12px;
+  border: var(--border);
+  background: #000;
+  color: var(--fg);
+  text-decoration: none;          /* buttons are not underlined */
+  text-transform: uppercase;      /* brutalist vibe */
+  letter-spacing: 0.06em;
+}
+.btn:hover{
+  background: var(--fg);
+  color: #000;
+}
+
+/* Nav */
 .nav{
-  display:flex;
-  flex-wrap:wrap;
-  gap: 8px 10px;
-  justify-content:center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 14px;
 }
 .nav a{
-  text-decoration:none;
-  color: var(--muted);
-  padding: 7px 10px;
-  border-radius: 12px;
-  border: 1px solid transparent;
+  color: var(--fg);
+  text-decoration: none;
+  border-bottom: 2px solid var(--fg);
+  padding-bottom: 2px;
 }
 .nav a:hover{
-  color: var(--text);
-  border-color: var(--border);
-  background: rgba(255,255,255,.04);
+  background: var(--fg);
+  color: #000;
 }
 
-.actions{
-  display:flex;
-  gap: 10px;
-  justify-content:flex-end;
+/* ============================================================
+   SECTIONS
+============================================================ */
+.block{
+  padding: 28px 0;
+  border-bottom: var(--border); /* brutalist: sections are separated with hard rules */
 }
 
-/* Buttons */
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:8px;
-  padding: 10px 12px;
-  border-radius: 14px;
-  text-decoration:none;
-  border: 1px solid rgba(124,92,255,.50);
-  background: rgba(124,92,255,.18);
-  box-shadow: 0 10px 30px rgba(0,0,0,.22);
-  transition: transform .15s ease, background .15s ease, border-color .15s ease;
-}
-.btn:hover{ transform: translateY(-1px); }
-.btn:active{ transform: translateY(0); }
-.btn-ghost{
-  border-color: rgba(255,255,255,.14);
-  background: rgba(255,255,255,.06);
-}
-
-/* Sections */
-.section{ padding: 64px 0; }
-
-.section-grid{
-  display:grid;
-  grid-template-columns: 240px 1fr;
-  gap: 18px;
-}
-
-.section-title h2{
-  margin: 0;
+h2{
+  margin: 0 0 12px 0;
   font-size: 18px;
-  letter-spacing: .2px;
-}
-.section-title p{
-  margin: 6px 0 0;
-  color: var(--muted);
-  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-/* Panels */
+/* Panels: hard bordered content blocks */
 .panel{
-  background: var(--panel);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 18px;
-  box-shadow: var(--shadow);
-}
-.panel.inset{
-  background: rgba(255,255,255,.045);
-  border-color: rgba(255,255,255,.10);
-}
-.highlight{
-  background:
-    radial-gradient(650px 260px at 10% 0%, rgba(124,92,255,.22), transparent 65%),
-    radial-gradient(650px 260px at 95% 30%, rgba(52,211,153,.14), transparent 62%),
-    var(--panel);
+  border: var(--border);
+  padding: 14px;
+  background: #000;
 }
 
-.stack{ display:grid; gap: 14px; }
-
-/* Hero */
-.hero{ padding-top: 54px; }
-.hero-grid{
-  display:grid;
-  grid-template-columns: 1.25fr .85fr;
-  gap: 18px;
-  align-items:start;
-}
-.kicker{
-  margin:0 0 10px 0;
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 12px;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-}
-.headline{
-  margin: 0;
-  font-size: 46px;
-  line-height: 1.08;
-  letter-spacing: -0.6px;
-}
-.subhead{
-  margin: 14px 0 18px;
-  color: var(--muted);
-  max-width: 70ch;
-}
-.accent{
-  background: linear-gradient(90deg, var(--accent), var(--accent3));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-.accent2{
-  background: linear-gradient(90deg, var(--accent2), var(--accent3));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-.hero-badges{
-  display:flex;
-  flex-wrap:wrap;
-  gap: 10px;
-  margin: 16px 0 18px;
-}
-.chip{
-  padding: 7px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.05);
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 12px;
-}
-.hero-cta{
-  display:flex;
-  flex-wrap:wrap;
-  gap: 10px;
-  margin: 16px 0 18px;
-}
-.quick-info{
-  display:grid;
+/* Two-column hero grid */
+.grid2{
+  display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 10px 14px;
-  margin-top: 10px;
+  gap: 14px;
 }
-.qi{
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.10);
-  border-radius: 14px;
-  padding: 10px 12px;
-}
-.qi-label{
-  display:block;
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 11px;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-.qi-val{ display:block; margin-top: 2px; }
 
-/* Text / Lists */
-.panel-title{ margin-top:0; }
-.muted{ color: var(--muted); }
-.small{ font-size: 12px; }
+/* Generic grid for projects/skills */
+.grid{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
 
-.bullets{
-  margin: 12px 0 0;
+/* Facts in hero */
+.facts{
+  margin-top: 14px;
+  display: grid;
+  gap: 10px;
+}
+.fact{
+  border: 2px dashed var(--fg); /* brutalist: dashed/dotted rules can be nice */
+  padding: 10px;
+}
+.k{
+  display: block;
+  opacity: 0.8;
+  letter-spacing: 0.08em;
+  font-size: 12px;
+}
+.v{
+  display: block;
+  margin-top: 2px;
+}
+
+/* Experience header row */
+.row{
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.date{
+  border: 2px solid var(--fg);
+  padding: 6px 8px;
+  white-space: nowrap;
+}
+
+/* Lists: keep them tight */
+ul{
+  margin: 10px 0 0;
   padding-left: 18px;
 }
-.bullets li{ margin: 6px 0; }
-.bullets.compact li{ margin: 4px 0; }
-
-.tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap: 8px;
-  margin-top: 14px;
-}
-.tags span{
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.13);
-  background: rgba(255,255,255,.05);
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 12px;
+li{
+  margin: 6px 0;
 }
 
-/* Experience items */
-.item-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  gap: 14px;
-}
-.item h3{ margin:0; font-size: 16px; }
-.pill{
-  margin: 0;
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.05);
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 12px;
-  white-space: nowrap;
+/* Muted text */
+.muted{
+  opacity: 0.75;
 }
 
-/* Callouts */
-.callouts{
-  display:grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-  margin-top: 16px;
-}
-.callout{
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.10);
-  border-radius: 16px;
-  padding: 12px;
-  transition: transform .18s ease, border-color .18s ease, background .18s ease;
-}
-.callout:hover{
-  transform: translateY(-2px);
-  border-color: rgba(124,92,255,.35);
-  background: rgba(255,255,255,.055);
-}
-.callout-title{
-  font-weight: 750;
-  margin-bottom: 4px;
-}
-
-/* Projects */
-.projects-grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  margin-top: 16px;
-}
-.project-card{
-  border-radius: 18px;
-  padding: 16px;
-  background: rgba(255,255,255,.045);
-  border: 1px solid rgba(255,255,255,.10);
-  box-shadow: 0 12px 40px rgba(0,0,0,.35);
-  transition: transform .18s ease, border-color .18s ease, background .18s ease;
-}
-.project-card:hover{
-  transform: translateY(-2px);
-  border-color: rgba(52,211,153,.25);
-  background: rgba(255,255,255,.055);
-}
-.project-top{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  gap: 10px;
-}
-.badge{
-  font-family: var(--mono);
-  font-size: 12px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.14);
-  background: rgba(255,255,255,.05);
-  color: var(--muted);
-  white-space: nowrap;
-}
+/* Links area inside project cards */
 .links{
-  margin-top: 14px;
-  color: var(--muted);
-}
-.links a{
-  color: var(--text);
-  text-decoration:none;
-  border-bottom: 1px solid rgba(255,255,255,.25);
-}
-.links a:hover{ border-bottom-color: rgba(255,255,255,.55); }
-
-.note{
-  margin-top: 16px;
-  padding: 12px 14px;
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(124,92,255,.08);
+  margin-top: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
 }
 
-/* Skills */
-.skills-grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+/* ============================================================
+   FOOTER
+============================================================ */
+.foot{
+  padding: 18px 0 28px;
 }
-.skill{
-  border-radius: 16px;
-  padding: 14px;
-  background: rgba(255,255,255,.04);
-  border: 1px solid rgba(255,255,255,.10);
+.footrow{
+  border: var(--border);
+  padding: 12px;
 }
 
-/* Contact */
-.contact-grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-.contact-line a{ font-weight: 750; }
-.contact-actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap: 10px;
-  margin-top: 14px;
-}
-
-/* Footer */
-.footer{
-  padding: 24px 0 40px;
-  border-top: 1px solid rgba(255,255,255,.10);
-  background: rgba(7,10,18,.35);
-}
-.footer-inner{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:space-between;
-  gap: 10px;
-}
-
-/* Reveal animation */
-.reveal{
-  opacity: 0;
-  transform: translateY(12px);
-  transition: opacity .55s ease, transform .55s ease;
-}
-.reveal.in{
-  opacity: 1;
-  transform: translateY(0);
-}
-
-@media (prefers-reduced-motion: reduce){
-  html{ scroll-behavior:auto; }
-  .btn, .callout, .project-card{ transition:none; }
-  .reveal{ opacity: 1; transform:none; }
-}
-
-/* Responsive */
-@media (max-width: 980px){
-  .topbar-inner{ flex-wrap:wrap; }
-  .actions{ width:100%; justify-content:flex-start; }
-  .hero-grid{ grid-template-columns: 1fr; }
-  .section-grid{ grid-template-columns: 1fr; }
-  .callouts{ grid-template-columns: 1fr; }
-  .projects-grid{ grid-template-columns: 1fr; }
-  .skills-grid{ grid-template-columns: 1fr; }
-  .contact-grid{ grid-template-columns: 1fr; }
-  .headline{ font-size: 40px; }
-}
-
-@media (max-width: 520px){
-  .container{ width: calc(100% - 28px); }
-  .headline{ font-size: 34px; }
-  .quick-info{ grid-template-columns: 1fr; }
+/* ============================================================
+   RESPONSIVE
+   Brutalist doesn't mean broken. We stack on small screens.
+============================================================ */
+@media (max-width: 900px){
+  .grid2{
+    grid-template-columns: 1fr;
+  }
+  .grid{
+    grid-template-columns: 1fr;
+  }
+  .row{
+    flex-direction: column;
+  }
+  .date{
+    align-self: flex-start;
+  }
 }

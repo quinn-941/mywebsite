@@ -1,505 +1,448 @@
 <!doctype html>
 <html lang="en">
 <head>
+  <!-- =========================================================
+       META / SEO
+       Brutalist sites often keep this minimal, but we still do
+       correct HTML5 + responsive viewport for usability.
+  ========================================================== -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Quinn Halvorson — Electrical & Biomedical Engineering | Robotics, PCB Design, Outreach" />
-  <title>Quinn Halvorson | Engineering Portfolio</title>
+  <meta name="description" content="Quinn Halvorson — Electrical & Biomedical Engineering | Brutalist CV + Portfolio" />
+
+  <!-- =========================================================
+       TITLE (shows in browser tab / search results)
+  ========================================================== -->
+  <title>Quinn Halvorson — CV / Portfolio</title>
+
+  <!-- =========================================================
+       CSS FILE
+       Keep styles separated so GitHub Pages stays simple.
+  ========================================================== -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- =========================================================
+       SKIP LINK (accessibility)
+       Visible only when focused via keyboard.
+  ========================================================== -->
+  <a class="skip" href="#main">Skip to content</a>
 
-  <!--
-    ============================================================
-    QUICK SETUP NOTES (not visible on the site)
-    - Put your resume PDF in the same folder as this file
-      and name it EXACTLY: resume.pdf
-    - Replace placeholder project links (href="#") with:
-      GitHub repos, Google Drive photo albums, YouTube demos, etc.
-    ============================================================
-  -->
+  <!-- =========================================================
+       HEADER / TOP BAR
+       Brutalist: big type, hard edges, plain structure.
+  ========================================================== -->
+  <header class="top">
+    <!-- Container: limits width and centers content -->
+    <div class="wrap">
+      <!-- Identity block -->
+      <div class="id">
+        <!-- Big name -->
+        <h1 class="name">QUINN HALVORSON</h1>
 
-  <!-- Top Nav -->
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <div class="brand">
-        <div class="logo" aria-hidden="true">QH</div>
-        <div class="brand-text">
-          <div class="brand-name">Quinn Halvorson</div>
-          <div class="brand-sub">Electrical & Biomedical Engineering • Fort Collins, CO</div>
-        </div>
+        <!-- Subtitle: keep it blunt -->
+        <p class="role">Electrical &amp; Biomedical Engineering (CSU) — Fort Collins, CO</p>
       </div>
 
-      <nav class="nav" aria-label="Primary">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
+      <!-- =====================================================
+           QUICK ACTIONS
+           - Resume download: requires resume.pdf in same folder.
+           - Email: direct mailto
+      ====================================================== -->
       <div class="actions">
-        <!-- Resume download button: requires a file named resume.pdf in the same folder -->
-        <a class="btn" href="resume.pdf" download>Download Resume (PDF)</a>
-        <a class="btn btn-ghost" href="#contact">Contact</a>
+        <!-- Put your PDF in the repo root as: resume.pdf -->
+        <a class="btn" href="resume.pdf" download>DOWNLOAD RESUME (PDF)</a>
+        <a class="btn" href="mailto:quinn.halvorson11@gmail.com">EMAIL</a>
       </div>
+
+      <!-- =====================================================
+           NAVIGATION
+           Brutalist nav: plain text, no fancy hover.
+      ====================================================== -->
+      <nav class="nav" aria-label="Primary">
+        <a href="#about">ABOUT</a>
+        <a href="#projects">PROJECTS</a>
+        <a href="#experience">EXPERIENCE</a>
+        <a href="#skills">SKILLS</a>
+        <a href="#education">EDUCATION</a>
+        <a href="#contact">CONTACT</a>
+      </nav>
     </div>
   </header>
 
+  <!-- =========================================================
+       MAIN CONTENT
+  ========================================================== -->
   <main id="main">
-    <!-- Hero -->
-    <section class="hero section reveal">
-      <div class="container hero-grid">
-        <div class="hero-left">
-          <p class="kicker">Engineering Portfolio</p>
+    <!-- =======================================================
+         HERO
+         Brutalist hero: blunt summary + contact blocks.
+    ======================================================== -->
+    <section class="block">
+      <div class="wrap grid2">
+        <!-- Left column: summary -->
+        <div class="panel">
+          <h2>SUMMARY</h2>
 
-          <h1 class="headline">
-            I build <span class="accent">robust hardware</span> and <span class="accent2">robotics-ready</span> systems.
-          </h1>
-
-          <!--
-            Edit this paragraph for targeting:
-            - internships
-            - robotics teams
-            - defense/aerospace-adjacent programs
-            Keep it 2–3 lines, outcome-focused.
-          -->
-          <p class="subhead">
-            Electrical & Biomedical Engineering student focused on PCB design, robotics electronics, fabrication,
-            and STEM outreach. Interested in internships in robotics, aerospace/defense-adjacent programs, and hands-on engineering teams.
+          <!-- Edit this summary to target specific internship roles -->
+          <p>
+            Electrical &amp; Biomedical Engineering student focused on robotics electronics, PCB tooling,
+            fabrication, and building durable demo systems. Interested in internships in robotics and hands-on engineering teams.
           </p>
 
-          <div class="hero-badges" role="list">
-            <!-- Add/remove chips based on what you want recruiters to notice -->
-            <span class="chip">PCB Design (KiCad)</span>
-            <span class="chip">Robotics Electronics</span>
-            <span class="chip">SolidWorks (CSWA 2019, CSWP 2025)</span>
-            <span class="chip">CNC / Fabrication</span>
-          </div>
-
-          <div class="hero-cta">
-            <a class="btn" href="#projects">View Projects</a>
-            <a class="btn btn-ghost" href="mailto:quinn.halvorson11@gmail.com">Email</a>
-          </div>
-
-          <div class="quick-info">
-            <div class="qi"><span class="qi-label">Location</span><span class="qi-val">Fort Collins, CO</span></div>
-            <div class="qi"><span class="qi-label">Phone</span><span class="qi-val">(970) 690-6586</span></div>
-            <div class="qi">
-              <span class="qi-label">Email</span>
-              <a class="qi-val" href="mailto:quinn.halvorson11@gmail.com">quinn.halvorson11@gmail.com</a>
+          <!-- Contact facts (from resume) -->
+          <div class="facts" role="list">
+            <div class="fact" role="listitem">
+              <span class="k">PHONE</span>
+              <span class="v">(970) 690-6586</span>
             </div>
+
+            <div class="fact" role="listitem">
+              <span class="k">EMAIL</span>
+              <span class="v"><a href="mailto:quinn.halvorson11@gmail.com">quinn.halvorson11@gmail.com</a></span>
+            </div>
+
+            <div class="fact" role="listitem">
+              <span class="k">LOCATION</span>
+              <span class="v">Fort Collins, CO</span>
+            </div>
+
+            <!-- Optional: add links when you have them -->
+            <!--
+            <div class="fact" role="listitem">
+              <span class="k">GITHUB</span>
+              <span class="v"><a href="https://github.com/yourhandle" target="_blank" rel="noreferrer">github.com/yourhandle</a></span>
+            </div>
+            -->
           </div>
         </div>
 
-        <aside class="hero-right">
-          <div class="panel highlight reveal">
-            <h2 class="panel-title">What I bring</h2>
-            <ul class="bullets">
-              <li><strong>Robotics electronics leadership</strong> — led electrical team, managed purchasing/budget, built reliable systems.</li>
-              <li><strong>Hands-on builds</strong> — design → manufacture → assemble electromechanical systems and demos.</li>
-              <li><strong>Communication + mentoring</strong> — tutoring STEM and creating K–12 outreach lessons/demos.</li>
-              <li><strong>Manufacturing mindset</strong> — fabrication + iterative prototyping with attention to reliability.</li>
-            </ul>
-          </div>
-
-          <div class="panel reveal">
-            <h2 class="panel-title">Looking for</h2>
-            <p class="muted">
-              Internship roles where I can contribute in electronics design, robotics controls hardware, test/validation,
-              manufacturing support, or STEM/field demo engineering.
-            </p>
-          </div>
+        <!-- Right column: "brutalist card" highlights -->
+        <aside class="panel">
+          <h2>HIGHLIGHTS</h2>
+          <ul>
+            <li>Robotics electronics lead experience (team leadership, budgets, build quality).</li>
+            <li>Designed a hot-swap system for control electronics (serviceability mindset).</li>
+            <li>STEM tutoring + K–12 outreach lesson plans and demo maintenance.</li>
+            <li>Fabrication + 3D printing experience for practical prototyping.</li>
+          </ul>
         </aside>
       </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="section reveal">
-      <div class="container section-grid">
-        <div class="section-title">
-          <h2>About</h2>
-          <p>Fast overview</p>
+    <!-- =======================================================
+         ABOUT
+    ======================================================== -->
+    <section id="about" class="block">
+      <div class="wrap">
+        <h2>ABOUT</h2>
+
+        <!-- Brutalist: straightforward paragraph -->
+        <div class="panel">
+          <p>
+            I build and maintain electrical systems that need to work under real constraints:
+            time pressure, limited parts, harsh handling, and frequent troubleshooting.
+            I prefer designs that are easy to assemble, inspect, and repair.
+          </p>
+
+          <!-- Optional: one-line target statement -->
+          <!-- <p><strong>OPEN TO:</strong> Summer 2026 internships (robotics / hardware / test).</p> -->
         </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         PROJECTS (Gallery)
+         Replace placeholder links with real links when ready.
+    ======================================================== -->
+    <section id="projects" class="block">
+      <div class="wrap">
+        <h2>PROJECTS</h2>
+
+        <!-- Projects grid -->
+        <div class="grid">
+          <!-- Project 1 -->
+          <article class="panel">
+            <h3>HOT-SWAP CONTROL ELECTRONICS (ROBOTICS)</h3>
+            <p>
+              Designed a hot-swap system to reduce downtime and increase serviceability during troubleshooting.
+            </p>
+            <ul>
+              <li>Defined constraints: fast swap, robust connectors, safe handling.</li>
+              <li>Integrated into the robot’s electrical architecture for field use.</li>
+            </ul>
+
+            <!-- Links (replace #) -->
+            <p class="links">
+              <a href="#" target="_blank" rel="noreferrer">WRITE-UP</a>
+              <span> / </span>
+              <a href="#" target="_blank" rel="noreferrer">PHOTOS</a>
+            </p>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="panel">
+            <h3>K–12 ENGINEERING DEMOS (OUTREACH)</h3>
+            <p>
+              Built and maintained demos used for K–12 engineering outreach; wrote lesson plans for grades 6–12.
+            </p>
+            <ul>
+              <li>Optimized for durability, repeatability, and classroom safety.</li>
+              <li>Iterated based on feedback to improve clarity and engagement.</li>
+            </ul>
+
+            <p class="links">
+              <a href="#" target="_blank" rel="noreferrer">DEMO VIDEO</a>
+              <span> / </span>
+              <a href="#" target="_blank" rel="noreferrer">LESSON PLAN</a>
+            </p>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="panel">
+            <h3>ROBOT ELECTRICAL SYSTEM UPGRADES</h3>
+            <p>
+              Maintained and upgraded competition robots while leading electrical build quality and purchasing.
+            </p>
+            <ul>
+              <li>Trained team members in wiring practices and inspection.</li>
+              <li>Managed buy lists and budget to keep builds on schedule.</li>
+            </ul>
+
+            <p class="links">
+              <a href="#" target="_blank" rel="noreferrer">NOTES</a>
+              <span> / </span>
+              <a href="#" target="_blank" rel="noreferrer">CAD</a>
+            </p>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="panel">
+            <h3>3D PRINTING CURRICULUM + MAKERSPACE OPS</h3>
+            <p>
+              Created lesson plans for 3D printing; helped manage makerspace + VR lab and supported grant prep.
+            </p>
+            <ul>
+              <li>Standardized training and workflows for new users.</li>
+              <li>Supported funding efforts with documentation and project prep.</li>
+            </ul>
+
+            <p class="links">
+              <a href="#" target="_blank" rel="noreferrer">MATERIALS</a>
+              <span> / </span>
+              <a href="#" target="_blank" rel="noreferrer">GALLERY</a>
+            </p>
+          </article>
+        </div>
+
+        <!-- Hidden notes: visible only in source -->
+        <!--
+          PROJECTS TIP:
+          Keep each project as:
+          - 1 sentence: what it is + why it matters
+          - 2 bullets: constraints + outcomes
+          - 1 line: links
+        -->
+      </div>
+    </section>
+
+    <!-- =======================================================
+         EXPERIENCE
+         Based on your resume content.
+    ======================================================== -->
+    <section id="experience" class="block">
+      <div class="wrap">
+        <h2>EXPERIENCE</h2>
+
+        <!-- Experience item -->
+        <article class="panel">
+          <header class="row">
+            <div>
+              <h3>CSU ENGINEERING SUCCESS CENTER — PEER MENTOR</h3>
+              <p class="muted">Fort Collins, CO</p>
+            </div>
+            <div class="date">SEP 2024 — SEP 2025</div>
+          </header>
+
+          <ul>
+            <li>Tutored students in STEM classes.</li>
+            <li>Planned and organized CSU community programs.</li>
+          </ul>
+        </article>
+
+        <!-- Experience item -->
+        <article class="panel">
+          <header class="row">
+            <div>
+              <h3>CSU ELECTRICAL ENGINEERING OUTREACH — MEMBER</h3>
+              <p class="muted">Fort Collins, CO</p>
+            </div>
+            <div class="date">SEP 2024 — PRESENT</div>
+          </header>
+
+          <ul>
+            <li>Made engineering-based lesson plans for students in grades 6–12.</li>
+            <li>Made and maintained demos used to teach K–12 students.</li>
+          </ul>
+        </article>
+
+        <!-- Experience item -->
+        <article class="panel">
+          <header class="row">
+            <div>
+              <h3>FIRST ROBOTICS TEAM 4388 (RIDGEBOTICS) — ELECTRONICS LEAD</h3>
+              <p class="muted">Fort Collins, CO</p>
+            </div>
+            <div class="date">AUG 2019 — MAY 2022</div>
+          </header>
+
+          <ul>
+            <li>Maintained and upgraded previous years’ robots; supported general labor and manufacturing.</li>
+            <li>Created large assemblies in SolidWorks.</li>
+            <li><strong>Promoted to electronics lead (2020):</strong> supervised and trained team members.</li>
+            <li>Managed buy lists and maintained project budget.</li>
+            <li>Designed, manufactured, and assembled electromechanical systems.</li>
+            <li>Created a hot-swap system for control electronics.</li>
+          </ul>
+        </article>
+
+        <!-- Experience item -->
+        <article class="panel">
+          <header class="row">
+            <div>
+              <h3>FORT COLLINS HIGH SCHOOL MAKER SPACE — LEAD INTERN</h3>
+              <p class="muted">Fort Collins, CO</p>
+            </div>
+            <div class="date">AUG 2018 — MAY 2020</div>
+          </header>
+
+          <ul>
+            <li>Managed maker space and VR lab.</li>
+            <li>Led a group of interns to solve problems around the school.</li>
+            <li>Created lesson plans to teach students 3D printing.</li>
+            <li>Helped prepare grants to fund the maker space and its projects.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         SKILLS
+    ======================================================== -->
+    <section id="skills" class="block">
+      <div class="wrap">
+        <h2>SKILLS</h2>
+
+        <!-- Brutalist "list of boxes" -->
+        <div class="grid">
+          <div class="panel">
+            <h3>PCB DESIGN</h3>
+            <p>KiCad</p>
+          </div>
+
+          <div class="panel">
+            <h3>CIRCUIT SIMULATION</h3>
+            <p>Cadence, LTspice</p>
+          </div>
+
+          <div class="panel">
+            <h3>MECHANICAL / CAD</h3>
+            <p>SolidWorks (CSWA 2019, CSWP 2025)</p>
+          </div>
+
+          <div class="panel">
+            <h3>FABRICATION</h3>
+            <p>
+              Manual milling machines, lathes, CNC milling machines.
+              Limited MIG and stick welding. Plasma cutting and oxy cutting.
+            </p>
+          </div>
+
+          <div class="panel">
+            <h3>3D PRINTING</h3>
+            <p>SLA and FDM machines. Cura and Slic3r derivatives.</p>
+          </div>
+
+          <div class="panel">
+            <h3>SOFTWARE</h3>
+            <p>Word, Excel, PowerPoint, Teams. Photoshop, Lightroom, Premiere Pro.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         EDUCATION
+    ======================================================== -->
+    <section id="education" class="block">
+      <div class="wrap">
+        <h2>EDUCATION</h2>
+
+        <div class="panel">
+          <h3>COLORADO STATE UNIVERSITY</h3>
+          <p>Electrical &amp; Biomedical Engineering</p>
+          <p class="muted">Junior • 2022 — Expected 2027</p>
+
+          <!-- Optional: add coursework, GPA, labs here -->
+          <!-- <p><strong>COURSEWORK:</strong> Circuits, Electronics, Embedded, Controls, Signals</p> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================
+         CONTACT
+    ======================================================== -->
+    <section id="contact" class="block">
+      <div class="wrap">
+        <h2>CONTACT</h2>
 
         <div class="panel">
           <p>
-            I’m an Electrical & Biomedical Engineering student at Colorado State University with hands-on experience in
-            robotics electronics leadership, PCB tools, mechanical design, and fabrication. I like building systems that are
-            practical, serviceable, and reliable — and I enjoy mentoring and outreach that makes engineering approachable.
+            Email:
+            <a href="mailto:quinn.halvorson11@gmail.com">quinn.halvorson11@gmail.com</a>
           </p>
 
-          <div class="callouts">
-            <div class="callout">
-              <div class="callout-title">Robotics-first</div>
-              <div class="muted">Electronics lead experience + hot-swap control electronics design.</div>
-            </div>
-            <div class="callout">
-              <div class="callout-title">Build-to-teach</div>
-              <div class="muted">Created and maintained K–12 STEM demos + lesson plans.</div>
-            </div>
-            <div class="callout">
-              <div class="callout-title">Shop-ready</div>
-              <div class="muted">Manual/CNC milling, lathes, cutting processes, and 3D printing.</div>
-            </div>
-          </div>
-
-          <!-- Add a 1-liner here if you want: "Open to Summer 2026 internships" -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="section reveal">
-      <div class="container section-grid">
-        <div class="section-title">
-          <h2>Projects</h2>
-          <p>Gallery</p>
-        </div>
-
-        <div class="panel">
-          <!--
-            PROJECTS SECTION NOTES (not visible):
-            - Keep 3–6 projects total.
-            - For each project:
-              * 1 sentence: what it is + why it matters
-              * 2 bullets: constraints + outcomes
-              * Tags: keywords recruiters search (robotics, controls, power, test, etc.)
-            - Replace href="#" with real links.
-          -->
-
-          <div class="projects-grid">
-            <article class="project-card">
-              <div class="project-top">
-                <h3>Hot-Swap Control Electronics (Robotics)</h3>
-                <span class="badge">Hardware</span>
-              </div>
-              <p class="muted">
-                Designed a hot-swap system to improve serviceability and reduce downtime during robot troubleshooting.
-              </p>
-              <ul class="bullets compact">
-                <li>Defined requirements: fast swap, robust connectors, safe power handling.</li>
-                <li>Integrated into robot electrical architecture for rapid field maintenance.</li>
-              </ul>
-              <div class="tags">
-                <span>Robotics</span><span>Power</span><span>Reliability</span><span>Serviceability</span>
-              </div>
-              <div class="links">
-                <!-- Replace with your links -->
-                <a href="#" target="_blank" rel="noreferrer">Case Study</a>
-                <span aria-hidden="true">·</span>
-                <a href="#" target="_blank" rel="noreferrer">Photos</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-top">
-                <h3>K–12 Engineering Demos (Outreach)</h3>
-                <span class="badge">Education</span>
-              </div>
-              <p class="muted">
-                Built and maintained demos used to teach engineering concepts to K–12 students; authored lesson plans for grades 6–12.
-              </p>
-              <ul class="bullets compact">
-                <li>Designed demos to be durable, repeatable, and classroom-safe.</li>
-                <li>Iterated based on feedback to improve clarity and engagement.</li>
-              </ul>
-              <div class="tags">
-                <span>Teaching</span><span>Demo Design</span><span>Documentation</span>
-              </div>
-              <div class="links">
-                <!-- Replace with your links -->
-                <a href="#" target="_blank" rel="noreferrer">Lesson Plan</a>
-                <span aria-hidden="true">·</span>
-                <a href="#" target="_blank" rel="noreferrer">Demo Video</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-top">
-                <h3>Robot Electrical System Upgrades</h3>
-                <span class="badge">Robotics</span>
-              </div>
-              <p class="muted">
-                Maintained and upgraded competition robots; led electrical team, purchasing, and build quality.
-              </p>
-              <ul class="bullets compact">
-                <li>Supervised and trained team members in wiring best practices.</li>
-                <li>Managed buy lists and budget to keep builds on schedule.</li>
-              </ul>
-              <div class="tags">
-                <span>Wiring</span><span>Leadership</span><span>Build Quality</span><span>Budgeting</span>
-              </div>
-              <div class="links">
-                <!-- Replace with your links -->
-                <a href="#" target="_blank" rel="noreferrer">Write-Up</a>
-                <span aria-hidden="true">·</span>
-                <a href="#" target="_blank" rel="noreferrer">CAD</a>
-              </div>
-            </article>
-
-            <article class="project-card">
-              <div class="project-top">
-                <h3>Maker Space 3D Printing Curriculum</h3>
-                <span class="badge">Workshop</span>
-              </div>
-              <p class="muted">
-                Created lesson plans to teach 3D printing; supported grants and managed a maker space + VR lab.
-              </p>
-              <ul class="bullets compact">
-                <li>Developed beginner-friendly training materials and workflows.</li>
-                <li>Supported funding efforts through project prep and documentation.</li>
-              </ul>
-              <div class="tags">
-                <span>3D Printing</span><span>Process</span><span>Teaching</span><span>Ops</span>
-              </div>
-              <div class="links">
-                <!-- Replace with your links -->
-                <a href="#" target="_blank" rel="noreferrer">Materials</a>
-                <span aria-hidden="true">·</span>
-                <a href="#" target="_blank" rel="noreferrer">Gallery</a>
-              </div>
-            </article>
-          </div>
-
-          <!--
-            Optional: if you want more "startup engineer" vibe,
-            add a 5th project that is more "test rig" / "validation" oriented,
-            or a small PCB design with photos.
-          -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Experience -->
-    <section id="experience" class="section reveal">
-      <div class="container section-grid">
-        <div class="section-title">
-          <h2>Experience</h2>
-          <p>Impact & leadership</p>
-        </div>
-
-        <div class="stack">
-          <article class="panel item">
-            <header class="item-header">
-              <div>
-                <h3>CSU Engineering Success Center — Peer Mentor</h3>
-                <p class="muted">Fort Collins, CO</p>
-              </div>
-              <p class="pill">Sep 2024 — Sep 2025</p>
-            </header>
-            <ul class="bullets">
-              <li>Tutored students in STEM courses with an emphasis on clarity, fundamentals, and problem-solving habits.</li>
-              <li>Planned and organized CSU community programs with consistent execution and coordination.</li>
-            </ul>
-            <div class="tags">
-              <span>Mentoring</span><span>Communication</span><span>Planning</span>
-            </div>
-          </article>
-
-          <article class="panel item">
-            <header class="item-header">
-              <div>
-                <h3>CSU Electrical Engineering Outreach — Member</h3>
-                <p class="muted">Fort Collins, CO</p>
-              </div>
-              <p class="pill">Sep 2024 — Present</p>
-            </header>
-            <ul class="bullets">
-              <li>Created engineering lesson plans for grades 6–12; tailored complexity to audience and learning goals.</li>
-              <li>Built and maintained demos for K–12 education, optimizing for durability and repeatability.</li>
-            </ul>
-            <div class="tags">
-              <span>Outreach</span><span>Demo Engineering</span><span>Documentation</span>
-            </div>
-          </article>
-
-          <article class="panel item">
-            <header class="item-header">
-              <div>
-                <h3>FIRST Robotics Team 4388 (Ridgebotics) — Electronics Lead</h3>
-                <p class="muted">Fort Collins, CO</p>
-              </div>
-              <p class="pill">Aug 2019 — May 2022</p>
-            </header>
-            <ul class="bullets">
-              <li>Promoted to Electronics Lead (2020); supervised and trained electrical team members.</li>
-              <li>Managed buy lists and maintained the project budget; improved parts readiness during builds.</li>
-              <li>Designed, manufactured, and assembled electromechanical systems; ensured wiring quality and reliability.</li>
-              <li>Created a hot-swap system for control electronics to reduce downtime during troubleshooting.</li>
-              <li>Maintained and upgraded competition robots; supported general manufacturing and assembly needs.</li>
-            </ul>
-            <div class="tags">
-              <span>Robotics</span><span>Electrical Systems</span><span>Leadership</span><span>Reliability</span>
-            </div>
-          </article>
-
-          <article class="panel item">
-            <header class="item-header">
-              <div>
-                <h3>Fort Collins High School Maker Space — Lead Intern</h3>
-                <p class="muted">Fort Collins, CO</p>
-              </div>
-              <p class="pill">Aug 2018 — May 2020</p>
-            </header>
-            <ul class="bullets">
-              <li>Managed maker space and VR lab; led interns solving engineering and operations problems.</li>
-              <li>Created lesson plans to teach 3D printing; improved onboarding for new students.</li>
-              <li>Helped prepare grants to fund the maker space and projects.</li>
-            </ul>
-            <div class="tags">
-              <span>Operations</span><span>3D Printing</span><span>Leadership</span><span>Grants</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills" class="section reveal">
-      <div class="container section-grid">
-        <div class="section-title">
-          <h2>Skills</h2>
-          <p>Tooling</p>
-        </div>
-
-        <div class="panel">
-          <div class="skills-grid">
-            <div class="skill">
-              <h3>PCB Design</h3>
-              <p class="muted">KiCad</p>
-            </div>
-
-            <div class="skill">
-              <h3>Circuit Simulation</h3>
-              <p class="muted">Cadence, LTspice</p>
-            </div>
-
-            <div class="skill">
-              <h3>Mechanical Design</h3>
-              <p class="muted">SolidWorks (CSWA 2019, CSWP 2025)</p>
-            </div>
-
-            <div class="skill">
-              <h3>Fabrication</h3>
-              <p class="muted">Manual milling machines, lathes, CNC milling; plasma/oxy cutting; limited MIG/stick welding</p>
-            </div>
-
-            <div class="skill">
-              <h3>3D Printing</h3>
-              <p class="muted">SLA and FDM; Cura and Slic3r derivatives</p>
-            </div>
-
-            <div class="skill">
-              <h3>Software</h3>
-              <p class="muted">Word, Excel, PowerPoint, Teams; Photoshop, Lightroom, Premiere Pro</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Education -->
-    <section id="education" class="section reveal">
-      <div class="container section-grid">
-        <div class="section-title">
-          <h2>Education</h2>
-          <p>CSU</p>
-        </div>
-
-        <div class="panel item">
-          <header class="item-header">
-            <div>
-              <h3>Colorado State University</h3>
-              <p class="muted">Electrical & Biomedical Engineering • Junior</p>
-            </div>
-            <p class="pill">2022 — Expected 2027</p>
-          </header>
-
-          <!-- Optional additions (not visible):
-               - Relevant coursework (Circuits, Electronics, Controls, Embedded)
-               - Clubs/labs
-               - GPA if strong and you want it listed
-          -->
-          <p class="muted">
-            Electrical & Biomedical Engineering student (Junior). Expected graduation: 2027.
+          <p>
+            Phone:
+            <a href="tel:+19706906586">(970) 690-6586</a>
           </p>
-        </div>
-      </div>
-    </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section reveal">
-      <div class="container section-grid">
-        <div class="section-title">
-          <h2>Contact</h2>
-          <p>Let’s connect</p>
-        </div>
+          <!-- Buttons repeated here for convenience -->
+          <p class="links">
+            <a class="btn" href="resume.pdf" download>DOWNLOAD RESUME (PDF)</a>
+            <a class="btn" href="mailto:quinn.halvorson11@gmail.com">EMAIL</a>
+          </p>
 
-        <div class="panel">
-          <div class="contact-grid">
-            <div>
-              <h3 style="margin-top:0;">Email</h3>
-              <p class="muted">Best way to reach me:</p>
-              <p class="contact-line">
-                <a href="mailto:quinn.halvorson11@gmail.com">quinn.halvorson11@gmail.com</a>
-              </p>
-
-              <div class="contact-actions">
-                <a class="btn" href="mailto:quinn.halvorson11@gmail.com">Email Me</a>
-                <!-- Resume download button: requires resume.pdf -->
-                <a class="btn btn-ghost" href="resume.pdf" download>Download PDF</a>
-              </div>
-
-              <!-- Optional: add LinkedIn / GitHub buttons here when you have URLs -->
-            </div>
-
-            <div class="panel inset">
-              <h3 style="margin-top:0;">Focus areas</h3>
-              <ul class="bullets compact">
-                <li>Robotics electrical systems + serviceable design</li>
-                <li>PCB design and simulation tools</li>
-                <li>Fabrication, prototyping, and build support</li>
-                <li>STEM mentoring and demo engineering</li>
-              </ul>
-
-              <!-- GitHub Pages reminder (not visible):
-                   Settings → Pages → Deploy from branch → main / root
-              -->
-            </div>
-          </div>
+          <!-- Hidden note: GitHub Pages deployment -->
+          <!--
+            DEPLOY:
+            - Create repo: quinnhalvorson.github.io
+            - Add: index.html, styles.css, resume.pdf
+            - Settings → Pages → Deploy from branch (main / root)
+          -->
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p class="muted small">© <span id="year"></span> Quinn Halvorson • Built with HTML5 + CSS3</p>
-      <p class="muted small">Fort Collins, CO • (970) 690-6586</p>
+  <!-- =========================================================
+       FOOTER
+  ========================================================== -->
+  <footer class="foot">
+    <div class="wrap row footrow">
+      <div>© <span id="y"></span> QUINN HALVORSON</div>
+      <div class="muted">HTML5 / CSS3 — BRUTALIST</div>
     </div>
   </footer>
 
+  <!-- =========================================================
+       TINY SCRIPT
+       Brutalist often avoids JS, but this is harmless and optional.
+  ========================================================== -->
   <script>
-    // Year
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // Scroll reveal (small + tasteful)
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!reduceMotion && "IntersectionObserver" in window) {
-      const obs = new IntersectionObserver((entries) => {
-        for (const e of entries) {
-          if (e.isIntersecting) e.target.classList.add("in");
-        }
-      }, { threshold: 0.08 });
-
-      document.querySelectorAll(".reveal").forEach(el => obs.observe(el));
-    } else {
-      document.querySelectorAll(".reveal").forEach(el => el.classList.add("in"));
-    }
+    // Set the year automatically so you never update it manually.
+    document.getElementById("y").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
